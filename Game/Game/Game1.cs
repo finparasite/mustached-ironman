@@ -35,7 +35,7 @@ namespace Game
         /// </summary>
         protected override void Initialize()
         {
-            level = new Level0;
+            level = new Level0();
 
             base.Initialize();
         }
@@ -50,7 +50,7 @@ namespace Game
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             level.LoadContent(Content);
-            level.InitializeLevel();
+            level.SetupLevel();
         }
 
         /// <summary>

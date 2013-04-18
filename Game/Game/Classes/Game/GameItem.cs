@@ -20,6 +20,9 @@ namespace Game
             get { return audio; }
         }
 
+        // Passthro constructor
+        public GameItem() { }
+
         public GameItem(string name, Audio audio)
         {
             this.name = name;
