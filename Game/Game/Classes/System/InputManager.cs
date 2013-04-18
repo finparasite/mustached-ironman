@@ -15,7 +15,7 @@ namespace Game
             Vector2 moveVector = Vector2.Zero;
 
             if (ks.IsKeyDown(Keys.D))
-                moveVector += -Vector2.UnitX;
+                moveVector += Vector2.UnitX;
             if (ks.IsKeyDown(Keys.A))
                 moveVector += -Vector2.UnitX;
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
@@ -96,10 +97,10 @@ namespace Game
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.LinearClamp,
                               DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Camera2D.Transform);
 
-            Parallel.ForEach(Actor.Actors, a =>
-                {
-                    a.Draw(spriteBatch);
-                });
+            foreach (Actor a in Actor.Actors)
+            {
+                a.Draw(spriteBatch);
+            }
 
             spriteBatch.End();
 

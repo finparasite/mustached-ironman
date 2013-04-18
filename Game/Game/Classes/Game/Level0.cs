@@ -10,7 +10,7 @@ namespace Game
 {
     class Level0 : Level
     {
-        private static Texture2D niki;
+        public static Texture2D niki;
 
         public override void LoadContent(ContentManager Content)
         {

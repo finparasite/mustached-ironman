@@ -18,7 +18,7 @@ namespace Game
 
         public void AddVelocity(Vector2 dir)
         {
-            dir += velocity;
+            velocity += dir;
             if (velocity.X > maxspeed)
                 velocity.X = maxspeed;
 
@@ -29,6 +29,7 @@ namespace Game
 
         public void Fire(Vector2 mousepos)
         {
+            new Player(mousepos, Level0.niki);
         }
     }
 }

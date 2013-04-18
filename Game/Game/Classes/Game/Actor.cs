@@ -68,7 +68,5 @@ namespace Game
 
             sb.Draw(texture, position, new Rectangle(0, 0, texture.Width, texture.Height), color, rotation, origin, scale, SpriteEffects.None, 0.5f);
         }
-
-
     }
 }
