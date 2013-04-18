@@ -21,5 +21,9 @@ namespace Game
                 velocity.X = -maxspeed;
                 
         }
+
+        public void Fire(Vector2 mousepos)
+        {
+        }
     }
 }
