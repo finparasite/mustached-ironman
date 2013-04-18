@@ -19,7 +19,7 @@ namespace Game
 
         protected Texture2D texture;
 
-        public List<Actor> Actors
+        public static List<Actor> Actors
         {
             get { return actors; }
         }

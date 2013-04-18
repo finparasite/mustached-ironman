@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -75,6 +76,11 @@ namespace Game
 
             Camera2D.Update(GraphicsDevice.Viewport);
 
+            Parallel.ForEach(DynamicActor.DynamicActors, da =>
+                {
+                    da.Update();
+                });
+
             base.Update(gameTime);
         }
 
@@ -89,9 +95,10 @@ namespace Game
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.LinearClamp,
                               DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Camera2D.Transform);
 
-            //////////////////////////////////////////////////
-            ////////////////////   TODO   ////////////////////
-            //////////////////////////////////////////////////
+            Parallel.ForEach(Actor.Actors, a =>
+                {
+                    a.Draw(spriteBatch);
+                });
 
             spriteBatch.End();
 

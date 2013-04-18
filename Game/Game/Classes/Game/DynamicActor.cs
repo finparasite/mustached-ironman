@@ -13,7 +13,7 @@ namespace Game
 
         protected Vector2 velocity;
 
-        public List<DynamicActor> DynamicActors
+        public static List<DynamicActor> DynamicActors
         {
             get { return dynamicActors; }
         }
