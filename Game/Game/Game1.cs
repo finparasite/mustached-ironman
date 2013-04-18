@@ -33,7 +33,6 @@ namespace Game
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             
             base.Initialize();
         }
@@ -70,7 +69,7 @@ namespace Game
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            Camera2D.Update(GraphicsDevice.Viewport);
 
             base.Update(gameTime);
         }
@@ -83,7 +82,14 @@ namespace Game
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.LinearClamp,
+                              DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Camera2D.Transform);
+
+            //////////////////////////////////////////////////
+            ////////////////////   TODO   ////////////////////
+            //////////////////////////////////////////////////
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
