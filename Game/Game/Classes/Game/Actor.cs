@@ -61,8 +61,6 @@ namespace Game
             this.texture = texture;
         }
 
-
-
         public virtual void Draw(SpriteBatch sb)
         {
             if (texture == null)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
 namespace Game
 {
     class DynamicActor : Actor
@@ -26,6 +27,16 @@ namespace Game
             : base(name, audio, position, scale, rotation, color, texture)
         {
             dynamicActors.Add(this);
+        }
+
+        protected void MoveRelative(Vector2 vect2)
+        {
+            position += vect2;
+        }
+
+        public void Update()
+        {
+            MoveRelative(velocity);
         }
     }
 }
