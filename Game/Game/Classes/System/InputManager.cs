@@ -19,7 +19,8 @@ namespace Game
             if (ks.IsKeyDown(Keys.A))
                 moveVector += -Vector2.UnitX;
 
-            Level.Player.AddVelocity(moveVector.Normalize());
+            moveVector.Normalize();
+            Level.Player.AddVelocity(moveVector);
 
             MouseState ms = Mouse.GetState();
             if (ms.LeftButton == ButtonState.Pressed)
