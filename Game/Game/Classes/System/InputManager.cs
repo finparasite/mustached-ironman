@@ -14,12 +14,8 @@ namespace Game
             KeyboardState ks = Keyboard.GetState();
             Vector2 moveVector = Vector2.Zero;
 
-            if (ks.IsKeyDown(Keys.W))
-                moveVector += -Vector2.UnitY;
             if (ks.IsKeyDown(Keys.D))
                 moveVector += -Vector2.UnitX;
-            if (ks.IsKeyDown(Keys.S))
-                moveVector += Vector2.UnitY;
             if (ks.IsKeyDown(Keys.A))
                 moveVector += -Vector2.UnitX;
 
