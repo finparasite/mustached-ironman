@@ -108,7 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Game\Camera2D.cs" />
+    <Compile Include="Classes\Game\Actor.cs" />
+    <Compile Include="Classes\Game\Attachment.cs" />
+    <Compile Include="Classes\Game\Audio.cs" />
+    <Compile Include="Classes\Game\DynamicActor.cs" />
     <Compile Include="Classes\Game\GameItem.cs" />
+    <Compile Include="Classes\Game\Level.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
