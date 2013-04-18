@@ -75,6 +75,7 @@ namespace Game
                 this.Exit();
 
             Camera2D.Update(GraphicsDevice.Viewport);
+            InputManager.Update();
 
             Parallel.ForEach(DynamicActor.DynamicActors, da =>
                 {
