@@ -19,6 +19,8 @@ namespace Game
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        private Level level;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -33,7 +35,8 @@ namespace Game
         /// </summary>
         protected override void Initialize()
         {
-            
+            level = new Level0;
+
             base.Initialize();
         }
 
@@ -46,7 +49,8 @@ namespace Game
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            level.LoadContent(Content);
+            level.InitializeLevel();
         }
 
         /// <summary>
