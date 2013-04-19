@@ -8,13 +8,6 @@ namespace Game
 {
     class Level : GameItem
     {
-        protected static Player player;
-
-        public static Player Player
-        {
-            get { return player; }
-        }
-
         public virtual void LoadContent(ContentManager Content)
         {
         }

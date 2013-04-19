@@ -13,17 +13,23 @@ namespace Game
         {
             KeyboardState ks = Keyboard.GetState();
             Vector2 moveVector = Vector2.Zero;
+            bool firing = false;
 
             if (ks.IsKeyDown(Keys.D))
                 moveVector += Vector2.UnitX;
             if (ks.IsKeyDown(Keys.A))
                 moveVector += -Vector2.UnitX;
 
-            Level.Player.AddVelocity(moveVector);
-
             MouseState ms = Mouse.GetState();
-            if (ms.LeftButton == ButtonState.Pressed)
-                Level.Player.Fire(new Vector2(ms.X, ms.Y));
+            firing = (ms.LeftButton == ButtonState.Pressed);
+
+            // Return if Player not yet created
+            if (Player.PlayerRef == null)
+                return;
+
+            Player.PlayerRef.AddVelocity(moveVector);
+            if (firing)
+                Player.PlayerRef.Fire(new Vector2(ms.X, ms.Y));
         }
     }
 }

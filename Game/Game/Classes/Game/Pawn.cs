@@ -29,7 +29,7 @@ namespace Game
 
         public void Fire(Vector2 mousepos)
         {
-            new Player(mousepos, Level0.niki);
+            // TODO
         }
     }
 }
