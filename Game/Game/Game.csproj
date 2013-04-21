@@ -117,6 +117,7 @@
     <Compile Include="Classes\Game\Level0.cs" />
     <Compile Include="Classes\Game\Pawn.cs" />
     <Compile Include="Classes\Game\Player.cs" />
+    <Compile Include="Classes\Game\Projectile.cs" />
     <Compile Include="Classes\System\Direction.cs" />
     <Compile Include="Classes\System\InputManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
