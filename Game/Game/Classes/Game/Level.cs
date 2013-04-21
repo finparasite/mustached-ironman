@@ -11,6 +11,7 @@ namespace Game
     abstract class Level : GameItem
     {
         protected static List<Rectangle> levelCollision;
+        protected Texture2D playerTexture;
         protected Texture2D background;
 
         public static List<Rectangle> LevelCollision
