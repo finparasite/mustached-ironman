@@ -14,11 +14,14 @@ namespace Game
             KeyboardState ks = Keyboard.GetState();
             Vector2 moveVector = Vector2.Zero;
             bool firing = false;
+            bool jumping = false;
 
             if (ks.IsKeyDown(Keys.D))
                 moveVector += Vector2.UnitX;
             if (ks.IsKeyDown(Keys.A))
                 moveVector += -Vector2.UnitX;
+
+            jumping = ks.IsKeyDown(Keys.Space);
 
             MouseState ms = Mouse.GetState();
             firing = (ms.LeftButton == ButtonState.Pressed);
@@ -26,6 +29,9 @@ namespace Game
             // Return if Player not yet created
             if (Player.PlayerRef == null)
                 return;
+
+            if (jumping)
+                Player.PlayerRef.Jump();
 
             Player.PlayerRef.AddVelocity(moveVector);
             if (firing)
