@@ -17,12 +17,29 @@ namespace Game
             get { return transform; }
         }
 
-        public static void Move(Vector2 vect2)
+        public static void MoveRelative(Vector2 moveVect)
         {
-            pos += vect2;
+            pos += moveVect;
+        }
+
+        public static void MoveAbsolute(Vector2 newPos)
+        {
+            pos = newPos;
         }
 
         public static void Update(Viewport vp)
+        {
+            UpdatePosition();
+            UpdateMatrix(vp);
+        }
+
+        private static void UpdatePosition()
+        {
+            if (Player.PlayerRef != null)
+                pos = Player.PlayerRef.Position;
+        }
+
+        private static void UpdateMatrix(Viewport vp)
         {
             transform = Matrix.CreateTranslation(new Vector3(-pos.X, -pos.Y, 0.0f)) *
                         Matrix.CreateRotationZ(0.0f) *
