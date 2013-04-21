@@ -12,7 +12,7 @@ namespace Game
     {
         public sealed override void LoadContent(ContentManager Content)
         {
-            // TODO
+            background = Content.Load<Texture2D>(@"Bitmaps/Level0/BG");
         }
 
         public sealed override void SetupLevel()

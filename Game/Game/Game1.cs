@@ -101,11 +101,15 @@ namespace Game
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            // Draw Background
+            spriteBatch.Begin();
+            level.DrawBackground(spriteBatch, GraphicsDevice.Viewport);
+            spriteBatch.End();
 
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.LinearClamp,
                               DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Camera2D.Transform);
 
+            // Draw all actors
             foreach (Actor a in Actor.Actors)
             {
                 a.Draw(spriteBatch);
