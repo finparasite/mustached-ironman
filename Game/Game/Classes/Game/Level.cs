@@ -8,17 +8,13 @@ using Microsoft.Xna.Framework;
 
 namespace Game
 {
-    class Level : GameItem
+    abstract class Level : GameItem
     {
         protected Texture2D background;
 
-        public virtual void LoadContent(ContentManager Content)
-        {
-        }
+        public abstract void LoadContent(ContentManager Content);
 
-        public virtual void SetupLevel()
-        {
-        }
+        public abstract void SetupLevel();
 
         public void DrawBackground(SpriteBatch sb, Viewport vp)
         {
