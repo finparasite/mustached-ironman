@@ -18,7 +18,7 @@ namespace Game
 
         public static float AngleFromVector2(Vector2 vect2)
         {
-            return (float)Math.Atan2(vect2.X, vect2.Y);
+            return (float)Math.Atan2(vect2.Y, vect2.X);
         }
     }
 }
