@@ -36,7 +36,7 @@ namespace Game
         private static void UpdatePosition()
         {
             if (Player.PlayerRef != null)
-                pos = Player.PlayerRef.Position;
+                pos.X = Player.PlayerRef.Position.X;
         }
 
         private static void UpdateMatrix(Viewport vp)
