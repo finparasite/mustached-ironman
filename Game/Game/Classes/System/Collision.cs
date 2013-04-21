@@ -8,15 +8,15 @@ namespace Game
 {
     static class Collision
     {
-        public static bool CheckIfCollidesLevel(Rectangle input)
+        public static int CheckIfCollidesLevel(Rectangle input)
         {
             foreach (Rectangle rect in Level.LevelCollision)
             {
                 if (CheckIfCollides(input, rect))
-                    return true;
+                    return rect.Top;
             }
 
-            return false;
+            return 0;
         }
 
         public static bool CheckIfCollides(Rectangle a, Rectangle b)
