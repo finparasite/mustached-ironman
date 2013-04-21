@@ -39,7 +39,7 @@ namespace Game
         public void Fire(Vector2 mousepos)
         {
             Vector2 clickPos = Utils.ScreenPointToVector(mousepos);
-            Vector2 dir = (clickPos - position);
+            Vector2 dir = (clickPos);
             dir.Normalize();
 
             float angle = Utils.AngleFromVector2(dir);
