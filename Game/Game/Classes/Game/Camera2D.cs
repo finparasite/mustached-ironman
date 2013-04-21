@@ -12,6 +12,11 @@ namespace Game
         private static Vector2 pos = new Vector2(0.0f, 0.0f);
         private static Matrix transform;
 
+        public static Vector2 Position
+        {
+            get { return pos; }
+        }
+
         public static Matrix Transform
         {
             get { return transform; }

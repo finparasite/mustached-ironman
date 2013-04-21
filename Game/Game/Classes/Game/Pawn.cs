@@ -35,7 +35,15 @@ namespace Game
 
         public void Fire(Vector2 mousepos)
         {
-            // TODO
+            Vector2 clickPos = Utils.ScreenPointToVector(mousepos);
+            Vector2 dir = (clickPos - position);
+            dir.Normalize();
+
+            float angle = Utils.AngleFromVector2(dir);
+
+            dir *= 5;
+
+            new Projectile(null, position, dir, angle, 0.0f);
         }
     }
 }

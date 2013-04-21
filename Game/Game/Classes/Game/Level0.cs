@@ -14,6 +14,7 @@ namespace Game
         {
             background = Content.Load<Texture2D>(@"Bitmaps/Level0/BG");
             playerTexture = Content.Load <Texture2D>(@"Bitmaps/Player");
+            Projectile.projectileTexture = Content.Load<Texture2D>(@"Bitmaps/Projectile");
         }
 
         public sealed override void SetupLevel()

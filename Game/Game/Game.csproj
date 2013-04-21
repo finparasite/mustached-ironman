@@ -121,6 +121,7 @@
     <Compile Include="Classes\System\Collision.cs" />
     <Compile Include="Classes\System\Direction.cs" />
     <Compile Include="Classes\System\InputManager.cs" />
+    <Compile Include="Classes\System\Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

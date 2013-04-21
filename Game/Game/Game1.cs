@@ -23,17 +23,23 @@ namespace Game
 
         private Level level;
         private static ContentManager contentRef;
-
+        private static Viewport viewportRef;
 
         public static ContentManager ContentRef
         {
             get { return contentRef; }
         }
 
+        public static Viewport ViewportRef
+        {
+            get { return viewportRef; }
+        }
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            IsMouseVisible = true;
 
             contentRef = Content;
         }
@@ -47,6 +53,7 @@ namespace Game
         protected override void Initialize()
         {
             level = new Level0();
+            viewportRef = GraphicsDevice.Viewport;
 
             base.Initialize();
         }
