@@ -29,8 +29,11 @@ namespace Game
 
         public void Jump()
         {
+            if (!isGrounded)
+                return;
+
             isGrounded = false;
-            AddVelocity(-Vector2.UnitY);
+            AddVelocity(new Vector2(0.0f, -15.0f));
         }
 
         public void Fire(Vector2 mousepos)

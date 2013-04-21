@@ -9,6 +9,14 @@ namespace Game
 {
     static class InputManager
     {
+        // Last keyboard state
+        private static KeyboardState lks;
+
+        static InputManager()
+        {
+            lks = Keyboard.GetState();
+        }
+
         public static void Update()
         {
             KeyboardState ks = Keyboard.GetState();
@@ -21,7 +29,9 @@ namespace Game
             if (ks.IsKeyDown(Keys.A))
                 moveVector += -Vector2.UnitX;
 
-            jumping = ks.IsKeyDown(Keys.Space);
+            // If space not down in last update
+            if (!lks.IsKeyDown(Keys.Space))
+                jumping = ks.IsKeyDown(Keys.Space);
 
             MouseState ms = Mouse.GetState();
             firing = (ms.LeftButton == ButtonState.Pressed);
@@ -36,6 +46,8 @@ namespace Game
             Player.PlayerRef.AddVelocity(moveVector);
             if (firing)
                 Player.PlayerRef.Fire(new Vector2(ms.X, ms.Y));
+
+            lks = ks;
         }
     }
 }

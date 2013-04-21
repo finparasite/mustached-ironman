@@ -25,7 +25,7 @@ namespace Game
 
         protected sealed override void SetupLevelCollision()
         {
-            levelCollision.Add(new Rectangle(-1000, 300, 2000, 100));
+            levelCollision.Add(new Rectangle(-1000, 300, 2000, 1000));
         }
     }
 }
