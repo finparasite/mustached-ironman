@@ -19,12 +19,18 @@ namespace Game
         public void AddVelocity(Vector2 dir)
         {
             velocity += dir;
+
             if (velocity.X > maxspeed)
                 velocity.X = maxspeed;
 
             else if (velocity.X < -maxspeed)
-                velocity.X = -maxspeed;
-                
+                velocity.X = -maxspeed;   
+        }
+
+        public void Jump()
+        {
+            isGrounded = false;
+            AddVelocity(-Vector2.UnitY);
         }
 
         public void Fire(Vector2 mousepos)
