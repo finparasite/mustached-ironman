@@ -33,21 +33,24 @@ namespace Game
 
         public virtual void Update()
         {
+            MoveRelative(velocity);
+
             if (!isGrounded)
                 CheckCollision();
 
             if (listenToGravity && !isGrounded)
                 ApplyGravity();
-
-            MoveRelative(velocity);
         }
 
         protected void CheckCollision()
         {
-            if (Collision.CheckIfCollidesLevel(new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height)))
+            int colliderTop = Collision.CheckIfCollidesLevel(new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height));
+
+           if (colliderTop != 0)
             {
                 isGrounded = true;
                 velocity.Y = 0.0f;
+                position.Y = colliderTop - texture.Height;
             }
         }
 
