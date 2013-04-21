@@ -22,11 +22,20 @@ namespace Game
         SpriteBatch spriteBatch;
 
         private Level level;
+        private static ContentManager contentRef;
+
+
+        public static ContentManager ContentRef
+        {
+            get { return contentRef; }
+        }
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            contentRef = Content;
         }
 
         /// <summary>
