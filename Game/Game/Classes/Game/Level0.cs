@@ -13,11 +13,17 @@ namespace Game
         public sealed override void LoadContent(ContentManager Content)
         {
             background = Content.Load<Texture2D>(@"Bitmaps/Level0/BG");
+            new Player(new Vector2(0, 0), Content.Load <Texture2D>(@"Bitmaps/Player"));
         }
 
         public sealed override void SetupLevel()
         {
-            // TODO
+            SetupLevelCollision();
+        }
+
+        protected sealed override void SetupLevelCollision()
+        {
+            levelCollision.Add(new Rectangle(-1000, 300, 2000, 100));
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Game
         protected static List<DynamicActor> dynamicActors;
 
         protected Vector2 velocity;
+        protected bool isGrounded = false;
+        protected bool listenToGravity = true;
 
         public static List<DynamicActor> DynamicActors
         {
@@ -29,14 +31,34 @@ namespace Game
             dynamicActors.Add(this);
         }
 
+        public virtual void Update()
+        {
+            if (!isGrounded)
+                CheckCollision();
+
+            if (listenToGravity && !isGrounded)
+                ApplyGravity();
+
+            MoveRelative(velocity);
+        }
+
+        protected void CheckCollision()
+        {
+            if (Collision.CheckIfCollidesLevel(new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height)))
+            {
+                isGrounded = true;
+                velocity.Y = 0.0f;
+            }
+        }
+
+        protected void ApplyGravity()
+        {
+            velocity.Y += 0.978f;
+        }
+
         protected void MoveRelative(Vector2 vect2)
         {
             position += vect2;
-        }
-
-        public void Update()
-        {
-            MoveRelative(velocity);
         }
     }
 }

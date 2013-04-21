@@ -18,6 +18,8 @@ namespace Game
 
         public Player(Vector2 position, Texture2D texture)
             : base("Player", null, position, 1.0f, 0, Color.White, texture)
-        { }
+        {
+            player = this;
+        }
     }
 }
