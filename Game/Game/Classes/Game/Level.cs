@@ -10,11 +10,22 @@ namespace Game
 {
     abstract class Level : GameItem
     {
+        protected static List<Rectangle> levelCollision;
         protected Texture2D background;
 
-        public abstract void LoadContent(ContentManager Content);
+        public static List<Rectangle> LevelCollision
+        {
+            get { return levelCollision; }
+        }
 
+        static Level()
+        {
+            levelCollision = new List<Rectangle>();
+        }
+
+        public abstract void LoadContent(ContentManager Content);
         public abstract void SetupLevel();
+        protected abstract void SetupLevelCollision();
 
         public void DrawBackground(SpriteBatch sb, Viewport vp)
         {
